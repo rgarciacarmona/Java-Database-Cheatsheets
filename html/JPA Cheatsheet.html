@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JPA Cheatsheet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: d5e7ce436666e7d4a2eeb12e7f8261dacceb3565 */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+.markdown-body img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1>JPA Cheatsheet</h1>
+<p><em>Rodrigo García Carmona</em> (v1.2.0)</p>
+<p>This guide has been written with SQLite and EclipseLink in mind.</p>
+<h2>Project setup</h2>
+<p>To be able to use JPA we must add the JPA provider (in our case, EclipseLink) to our project. This is done by importing the following two jar files:</p>
+<ul>
+<li><em>eclipselink.jar</em></li>
+<li><em>javax.persistence.jar</em></li>
+</ul>
+<p>We must also add a <em>META-INF</em> folder in our <em>src</em> (source code) folder and put a <em>persistence.xml</em> file inside it. The <em>persistence.xml</em> should be similar to this one:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>UTF-8<span class="pl-pds">"</span></span> ?&gt;
+&lt;<span class="pl-ent">persistence</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">xsi</span>=<span class="pl-s"><span class="pl-pds">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="pl-pds">"</span></span>
+xsi:schemaLocation=<span class="pl-s"><span class="pl-pds">"</span>http://java.sun.com/xml/ns/persistence</span>
+<span class="pl-s">http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd<span class="pl-pds">"</span></span>
+version=<span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://java.sun.com/xml/ns/persistence<span class="pl-pds">"</span></span>&gt;
+
+&lt;<span class="pl-ent">persistence-unit</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>provider-name<span class="pl-pds">"</span></span> <span class="pl-e">transaction-type</span>=<span class="pl-s"><span class="pl-pds">"</span>RESOURCE_LOCAL<span class="pl-pds">"</span></span>&gt;
+	&lt;<span class="pl-ent">provider</span>&gt;org.eclipse.persistence.jpa.PersistenceProvider&lt;/<span class="pl-ent">provider</span>&gt;
+
+	<span class="pl-c"><span class="pl-c">&lt;!--</span> Entity Classes <span class="pl-c">--&gt;</span></span>
+	&lt;<span class="pl-ent">class</span>&gt;a.java.package.EntityClass1&lt;/<span class="pl-ent">class</span>&gt;
+	&lt;<span class="pl-ent">class</span>&gt;a.java.package.EntityClass2&lt;/<span class="pl-ent">class</span>&gt;
+	&lt;<span class="pl-ent">class</span>&gt;a.java.package.EntityClass3&lt;/<span class="pl-ent">class</span>&gt;
+
+	&lt;<span class="pl-ent">properties</span>&gt;	
+		<span class="pl-c"><span class="pl-c">&lt;!--</span> Connection properties <span class="pl-c">--&gt;</span></span>
+		&lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>javax.persistence.jdbc.driver<span class="pl-pds">"</span></span>
+			value=<span class="pl-s"><span class="pl-pds">"</span>org.sqlite.JDBC<span class="pl-pds">"</span></span> /&gt;
+	    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>javax.persistence.jdbc.url<span class="pl-pds">"</span></span>
+			value=<span class="pl-s"><span class="pl-pds">"</span>jdbc:sqlite:database-url<span class="pl-pds">"</span></span> /&gt;
+		<span class="pl-c"><span class="pl-c">&lt;!--</span> Fill if we need user and password <span class="pl-c">--&gt;</span></span>
+		&lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>javax.persistence.jdbc.user<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> /&gt;
+		&lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>javax.persistence.jdbc.password<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> /&gt;
+	    
+	    <span class="pl-c"><span class="pl-c">&lt;!--</span> JPA creates the database schema if it doesn't exist <span class="pl-c">--&gt;</span></span>
+		&lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eclipselink.ddl-generation<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>create-tables<span class="pl-pds">"</span></span> /&gt;
+	&lt;/<span class="pl-ent">properties</span>&gt;
+
+&lt;/<span class="pl-ent">persistence-unit</span>&gt;
+&lt;/<span class="pl-ent">persistence</span>&gt;</pre></div>
+<p>In this file, we should change:</p>
+<ul>
+<li>The <em>provider-name</em>. We're going to refer to this name in the Entity Manager creation.</li>
+<li>The <em>Entity Classes</em> that we're going to model.</li>
+<li>The <em>database-url</em> that points to our database's location.</li>
+</ul>
+<p>Finally, we must also annotate (see later in this same document) all the entity classes we're going to manage with JPA.</p>
+<p><strong>An important note:</strong> Before executing any JPA code in a project that also uses JDBC (like our examples) <strong>be completely sure</strong> that you've already created the database's tables. This is needed so we're certain that the database schema is the one we want, and not any other one that JPA could decide works better.</p>
+<h2>Working with JPA</h2>
+<p>To actually work with JPA, the first thing to do is create an Entity Manager, which fulfills the same role as a connection in JDBC:</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">EntityManager</span> em <span class="pl-k">=</span> <span class="pl-smi">Persistence</span><span class="pl-k">.</span>createEntityManagerFactory(<span class="pl-s"><span class="pl-pds">"</span>provider-name<span class="pl-pds">"</span></span>)<span class="pl-c1">.</span>
+                   createEntityManager(); </pre></div>
+<p>Like with JDBC, if we work with SQLite, we must enable support for foreign key constraints. In order to do that, these lines of code must be run just after the creation of the Entity Manager:</p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>getTransaction()<span class="pl-k">.</span>begin();
+em<span class="pl-k">.</span>createNativeQuery(<span class="pl-s"><span class="pl-pds">"</span>PRAGMA foreign_keys=ON<span class="pl-pds">"</span></span>)<span class="pl-k">.</span>executeUpdate();
+em<span class="pl-k">.</span>getTransaction()<span class="pl-k">.</span>commit();</pre></div>
+<p>Note that <em>provider-name</em> is the one that we specified in the <em>persistence.xml</em> file before.</p>
+<p>After working with the database, we must remember to close the Entity Manager:</p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>close();</pre></div>
+<p>Transactions are used with operations that modify the database state: <em>create</em>, <em>update</em> and <em>delete</em>.</p>
+<p>To start a transaction we write:</p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>getTransaction()<span class="pl-k">.</span>begin();</pre></div>
+<p>Too finally commit a transaction we write:</p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>getTransaction()<span class="pl-k">.</span>commit();</pre></div>
+<p>And if we want to undo all changes (rollback) since the last commit we write:</p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>getTransaction()<span class="pl-k">.</span>rollback();</pre></div>
+<p>Most of the time, the database and objects states will match each other, but while working in a multi-user or remote environment, we might want to be sure that the objects reflect the state of the database, or vice-versa. To do that we use the following two methods:</p>
+<p>To force the database to reflect the object model state:</p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>flush();</pre></div>
+<p>To force the object model to reflect the database state:</p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>refresh();</pre></div>
+<h2>CRUD Operations</h2>
+<p>We can execute the four CRUD operations using JPA.</p>
+<p><strong>Create:</strong></p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>persist(object);</pre></div>
+<p><strong>Read</strong></p>
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Query</span> q <span class="pl-k">=</span> em<span class="pl-k">.</span>createNativeQuery(<span class="pl-s"><span class="pl-pds">"</span>SELECT Query<span class="pl-pds">"</span></span>, <span class="pl-smi">ClassName</span><span class="pl-k">.</span>class);</pre></div>
+<p>And then either this:</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">List&lt;<span class="pl-smi">ClassName</span>&gt;</span> list <span class="pl-k">=</span> q<span class="pl-k">.</span>getResultList();</pre></div>
+<p>Or (only when we know we'll get just <strong>one</strong> result):</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ClassName</span> object <span class="pl-k">=</span> (<span class="pl-smi">ClassName</span>) q<span class="pl-k">.</span>getSingleResult();</pre></div>
+<p><strong>Update</strong></p>
+<div class="highlight highlight-source-java"><pre>object<span class="pl-k">.</span>setMethod(setValue);</pre></div>
+<p>It is important to remember that we must make changes that affect an association in both sides:</p>
+<div class="highlight highlight-source-java"><pre>employee<span class="pl-k">.</span>setDepartment(department);
+department<span class="pl-k">.</span>addEmployee(employee);</pre></div>
+<p><strong>Delete</strong></p>
+<div class="highlight highlight-source-java"><pre>em<span class="pl-k">.</span>remove(object);</pre></div>
+<h2>JPA Entity Classes</h2>
+<p>All entity classes must have the following characteristics:</p>
+<ul>
+<li>Implement <em>Serializable</em>.</li>
+<li>A parameter-less constructor.</li>
+<li>Getters and setters for all attributes.</li>
+<li><em>equals</em> and <em>hashcode</em> methods that use just the primary key attribute.</li>
+<li>Bidirectional associations.</li>
+</ul>
+<p>And it's recommended that they have the following characteristics:</p>
+<ul>
+<li>A <em>toString</em> method.</li>
+<li>Add and remove methods for all <em>List</em> attributes.</li>
+</ul>
+<p>Attributes should be of one of the following types:</p>
+<ul>
+<li><em>Integer</em> (INTEGER in SQL)</li>
+<li><em>Double</em> (REAL in SQL)</li>
+<li><em>String</em> (TEXT in SQL)</li>
+<li><em>java.sql.Date</em> (DATE in SQL)</li>
+<li><em>byte[]</em> (BLOB in SQL)</li>
+<li>Another entity class or a list of elements from another entity class (representing a relationship with foreign keys in SQL)</li>
+</ul>
+<p>The table represented by the entity class must have:</p>
+<ul>
+<li>A PRIMARY KEY with the AUTOINCREMENT constraint (in SQLite).</li>
+</ul>
+<p>We must annotate every entity class in the following way:</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>table_name<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">EntityClass</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+
+	<span class="pl-k">@Id</span>
+	<span class="pl-k">@GeneratedValue</span>(<span class="pl-c1">generator</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>generator_name<span class="pl-pds">"</span></span>)
+	<span class="pl-k">@TableGenerator</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>generator-name<span class="pl-pds">"</span></span>, <span class="pl-c1">table</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>sqlite_sequence<span class="pl-pds">"</span></span>,
+	   	<span class="pl-c1">pkColumnName</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>, <span class="pl-c1">valueColumnName</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>seq<span class="pl-pds">"</span></span>,
+	   	<span class="pl-c1">pkColumnValue</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>tabl_name<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+}</pre></div>
+<ul>
+<li><em>table_name</em> must be the relational table name.</li>
+<li><em>generator_name</em> can be any name that's different to all other generator names.</li>
+</ul>
+<p>Note that the TableGenerator structure shown here is specific to SQLite.</p>
+<p>We annotate blobs this way:</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@Basic</span>(<span class="pl-c1">fetch</span><span class="pl-k">=</span><span class="pl-smi">FetchType</span><span class="pl-c1"><span class="pl-k">.</span>LAZY</span>)
+<span class="pl-k">@Lob</span>
+<span class="pl-k">private</span> <span class="pl-k">byte</span>[] photo;</pre></div>
+<p>The LAZY fetch type means that this attribute is only going to be retrieved from the database when it's really accessed; that is, when the appropriate get method is called. The opposite of LAZY is EAGER.</p>
+<p>All other attributes are automatically mapped to columns with the same name in the corresponding table. If we want to link an attribute with a column of a different name, we must use the Column annotation:</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@Column</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>surname)</span>
+<span class="pl-s">private String familyName;</span></pre></div>
+<p>All relationships between entities must also be annotated. We can choose to make these EAGER or LAZY; the former if we know that we're going to need the linked entity right away, and the latter if not. <strong>Be careful of making all associations EAGER.</strong> If you do that you might end getting the whole database with each read operation.</p>
+<h2>One to One Relationships</h2>
+<p>Here's an example on how to implement a one to one relationship using JPA.</p>
+<h3>Tables</h3>
+<p><strong>employees</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>surname</th>
+<th>salary</th>
+<th>address_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob</td>
+<td>Way</td>
+<td>50000</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sarah</td>
+<td>Smith</td>
+<td>60000</td>
+<td>7</td>
+</tr></tbody></table>
+<p><strong>addresses</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>street</th>
+<th>city</th>
+<th>country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>Mayor 5</td>
+<td>Madrid</td>
+<td>Spain</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Fernán 17</td>
+<td>Burgos</td>
+<td>Spain</td>
+</tr></tbody></table>
+<h3>Classes</h3>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>employees<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Employee</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+	<span class="pl-k">@OneToOne</span>(<span class="pl-c1">fetch</span><span class="pl-k">=</span><span class="pl-smi">FetchType</span><span class="pl-c1"><span class="pl-k">.</span>LAZY</span>)
+	<span class="pl-k">@JoinColumn</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>address_id<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-smi">Address</span> address;
+	<span class="pl-c1">...</span>
+}
+
+<span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>addresses<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Address</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+	<span class="pl-k">@OneToOne</span>(<span class="pl-c1">fetch</span><span class="pl-k">=</span><span class="pl-smi">FetchType</span><span class="pl-c1"><span class="pl-k">.</span>LAZY</span>, <span class="pl-c1">mappedBy</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>address<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-smi">Employee</span> owner;
+	<span class="pl-c1">...</span>
+}</pre></div>
+<h2>Many to One Relationships</h2>
+<p>Here's an example on how to implement a many to one relationship using JPA.</p>
+<h3>Tables</h3>
+<p><strong>employees</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>surname</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob</td>
+<td>Way</td>
+<td>50000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sarah</td>
+<td>Smith</td>
+<td>60000</td>
+</tr></tbody></table>
+<p><strong>phones</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>number</th>
+<th>type</th>
+<th>owner_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>917555555</td>
+<td>home</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>669696969</td>
+<td>work</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>666666666</td>
+<td>work</td>
+<td>2</td>
+</tr></tbody></table>
+<h3>Classes</h3>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>employees<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Employee</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+ 	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+	<span class="pl-k">@OneToMany</span>(<span class="pl-c1">mappedBy</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>owner<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">Phone</span>&gt;</span> phones;
+	<span class="pl-c1">...</span>
+}
+
+<span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>addresses<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Phone</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+	<span class="pl-k">@ManyToOne</span>(<span class="pl-c1">fetch</span><span class="pl-k">=</span><span class="pl-smi">FetchType</span><span class="pl-c1"><span class="pl-k">.</span>LAZY</span>)
+	<span class="pl-k">@JoinColumn</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>owner_id<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-smi">Employee</span> owner;
+	<span class="pl-c1">...</span>
+}</pre></div>
+<h2>Many to Many Relationships</h2>
+<p>Here's an example on how to implement a many to many relationship using JPA.</p>
+<h3>Tables</h3>
+<p><strong>employees</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>firstname</th>
+<th>lastname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob</td>
+<td>Way</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sarah</td>
+<td>Smith</td>
+</tr></tbody></table>
+<p><strong>projects</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GIS</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SIG</td>
+</tr></tbody></table>
+<p><strong>proj_emp</strong></p>
+<table>
+<thead>
+<tr>
+<th>emp_id</th>
+<th>proj_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+</tr></tbody></table>
+<h3>Classes</h3>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>employees<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Employee</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+  	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+	<span class="pl-k">@ManyToMany</span>
+	<span class="pl-k">@JoinTable</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>proj_emp<span class="pl-pds">"</span></span>,
+   		<span class="pl-c1">joinColumns</span><span class="pl-k">=</span>{<span class="pl-k">@JoinColumn</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>emp_id<span class="pl-pds">"</span></span>, <span class="pl-c1">referencedColumnName</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>)},
+   		<span class="pl-c1">inverseJoinColumns</span><span class="pl-k">=</span>{<span class="pl-k">@JoinColumn</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>proj_id<span class="pl-pds">"</span></span>, <span class="pl-c1">referencedColumnName</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>)})
+	<span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">Project</span>&gt;</span> projects;
+	<span class="pl-c1">...</span>
+}
+
+<span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>projects<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Project</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+	<span class="pl-k">@ManyToMany</span>(<span class="pl-c1">mappedBy</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>projects<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">Employee</span>&gt;</span> employees;
+	<span class="pl-c1">...</span>
+}</pre></div>
+<h2>Many to Many Relationships with an Association Class</h2>
+<p>When a many to many relationship has an association class, we need to represent this extra information as another class. In this case, the many to many relationship is simulated as two many to one relationships between the association class and the two related classes.</p>
+<h3>Tables</h3>
+<p><strong>employees</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>firstname</th>
+<th>lastname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob</td>
+<td>Way</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sarah</td>
+<td>Smith</td>
+</tr></tbody></table>
+<p><strong>projects</strong></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GIS</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SIG</td>
+</tr></tbody></table>
+<p><strong>proj_emp</strong></p>
+<table>
+<thead>
+<tr>
+<th>emp_id</th>
+<th>proj_id</th>
+<th>is_lead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>true</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>false</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>false</td>
+</tr></tbody></table>
+<h3>Classes</h3>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>employees<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Employee</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+  	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+	<span class="pl-k">@OneToMany</span>(<span class="pl-c1">mappedBy</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>employee<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">ProjectAssociation</span>&gt;</span> projects;
+	<span class="pl-c1">...</span>
+}
+
+<span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>projects<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Project</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+  	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
+	<span class="pl-k">@OneToMany</span>(<span class="pl-c1">mappedBy</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>project<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">ProjectAssociation</span>&gt;</span> employees;
+	<span class="pl-c1">...</span>
+}
+
+<span class="pl-k">@Entity</span>
+<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>proj_emp<span class="pl-pds">"</span></span>)
+<span class="pl-k">@IdClass</span>(<span class="pl-smi">ProjectAssociationId</span><span class="pl-k">.</span>class)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">ProjectAssociation</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+
+	<span class="pl-k">@Id</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> emp_id;
+	<span class="pl-k">@Id</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> proj_id;
+	<span class="pl-k">@Column</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>is_lead<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-k">boolean</span> isTeamLead;
+	<span class="pl-k">@ManyToOne</span>
+	<span class="pl-k">@PrimaryKeyJoinColumn</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>emp_id<span class="pl-pds">"</span></span>, <span class="pl-c1">referencedColumnName</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-smi">Employee</span> employee;
+	<span class="pl-k">@ManyToOne</span>
+	<span class="pl-k">@PrimaryKeyJoinColumn</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>proj_id<span class="pl-pds">"</span></span>, <span class="pl-c1">referencedColumnName</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>)
+	<span class="pl-k">private</span> <span class="pl-smi">Project</span> project;
+	<span class="pl-c1">...</span>
+}
+
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">ProjectAssociationId</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+ 
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> emp_id;
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> proj_id;
+ 
+	<span class="pl-c"><span class="pl-c">//</span> equals() and hashcode() using both ids</span>
+	<span class="pl-k">public</span> <span class="pl-k">int</span> <span class="pl-en">hashCode</span>() {
+   		<span class="pl-k">return</span> (<span class="pl-k">int</span>)(employeeId <span class="pl-k">+</span> projectId);
+	}
+ 
+	<span class="pl-k">public</span> <span class="pl-k">boolean</span> <span class="pl-en">equals</span>(<span class="pl-smi">Object</span> <span class="pl-v">object</span>) {
+   		<span class="pl-k">if</span> (object <span class="pl-k">instanceof</span> <span class="pl-smi">ProjectAssociationId</span>) {
+   			<span class="pl-smi">ProjectAssociationId</span> otherId <span class="pl-k">=</span> (<span class="pl-smi">ProjectAssociationId</span>) object;
+   			<span class="pl-k">return</span> (otherId<span class="pl-k">.</span>employeeId <span class="pl-k">==</span> <span class="pl-c1">this</span><span class="pl-k">.</span>employeeId) <span class="pl-k">&amp;&amp;</span>
+				(otherId<span class="pl-k">.</span>projectId <span class="pl-k">==</span> <span class="pl-c1">this</span><span class="pl-k">.</span>projectId);
+   		}
+   		<span class="pl-k">return</span> <span class="pl-c1">false</span>;
+	}
+
+}</pre></div>
+<p>Note that, in the example, we needed to create a special class <em>ProjectAssociationID</em>, whose sole purpose is to compute the primary key of the association class. This is needed because such primary key is made by combining two foreign keys.</p>
+<p>Here's an example on how to create an association class' object for this many to many relationship:</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">void</span> addEmployee(<span class="pl-smi">Employee</span> employee, <span class="pl-k">boolean</span> teamLead) {
+   	<span class="pl-smi">ProjectAssociation</span> association <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ProjectAssociation</span>();
+   	association<span class="pl-k">.</span>setEmployee(employee);
+   	association<span class="pl-k">.</span>setProject(<span class="pl-c1">this</span>);
+   	association<span class="pl-k">.</span>setEmployeeId(employee<span class="pl-k">.</span>getId());
+   	association<span class="pl-k">.</span>setProjectId(<span class="pl-c1">this</span><span class="pl-k">.</span>getId());
+   	association<span class="pl-k">.</span>setIsTeamLead(teamLead);
+
+   	<span class="pl-c1">this</span><span class="pl-k">.</span>employees<span class="pl-k">.</span>add(association);
+   	<span class="pl-c"><span class="pl-c">//</span> Also add the association object to the employee.</span>
+   	employee<span class="pl-k">.</span>getProjects()<span class="pl-k">.</span>add(association);
+}</pre></div>
+<p>The previous code is designed to be part of the <em>Project</em> class.</p>
+<h2>Id generation with JDBC, JPA and SQLite</h2>
+<p>To be able to work with JDBC and JPA at the same time while using SQLite (as happens in our examples), we must force JPA to use the SQLite primary key generation strategy.</p>
+<p>When SQLite needs to assign a primary key to a row, it looks in a special table called <em>sqlite_sequence</em>, which is automatically created in each SQLite database. This table has two columns: <em>name</em> that contains the other tables' names, and <em>seq</em>, which stores the next primary key to be assigned. Here's an example of this table:</p>
+<p><strong>sqlite_sequence</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>seq</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>employees</td>
+<td>7</td>
+</tr>
+<tr>
+<td>departments</td>
+<td>4</td>
+</tr></tbody></table>
+<p>In this example, the next new item in the employees table will have an id of 7, and the next department will have a primary key of 4.</p>
+<p>We need to reflect this in the entity classes, so we annotate the id attribute in the following way:</p>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@Id</span>
+<span class="pl-k">@GeneratedValue</span>(<span class="pl-c1">generator</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>employees<span class="pl-pds">"</span></span>)
+<span class="pl-k">@TableGenerator</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>employees<span class="pl-pds">"</span></span>, <span class="pl-c1">table</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>sqlite_sequence<span class="pl-pds">"</span></span>,
+                <span class="pl-c1">pkColumnName</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>, <span class="pl-c1">valueColumnName</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>seq<span class="pl-pds">"</span></span>,
+                <span class="pl-c1">pkColumnValue</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>employees<span class="pl-pds">"</span></span>)
+<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;</pre></div>
+<p>What table to use for the id is stored in the <em>table</em> parameter, which in our case is always <em>sqlite_Sequence</em>. In the same way, <em>pkColumnName</em> and <em>valueColumnName</em> must always be <em>name</em> and <em>seq</em>, respectively, since they point to the two columns of the aforementioned table.</p>
+<p>The <em>generator</em> and <em>name</em> properties must have the same name (<em>employees</em> in the example), and that name should be unique for each entity.</p>
+<p>Finally, <em>pkColumnValue</em> have to contain the name of the entity's table as it appears on the database. In this example, <em>employees</em>. Notice that is the same name that we chose for the previous two properties, for consistency's sake.</p>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
