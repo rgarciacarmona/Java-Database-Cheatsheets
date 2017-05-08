@@ -451,7 +451,7 @@ vertical-align:1px;
 </head>
 <body>
 <h1>JAXB Cheatsheet</h1>
-<p><em>Rodrigo García Carmona</em> (v1.0.1)</p>
+<p><em>Rodrigo García Carmona</em> (v1.0.2)</p>
 <h2>Project setup</h2>
 <p>We don't need to import any library to use JAXB, since it's included in the JDK.</p>
 <p>To marshall (Java2XML) and unmarshall (XML2Java) using JAXB we need to annotate the data classes and write some code to do the actual (un)marshalling.</p>
@@ -487,9 +487,8 @@ vertical-align:1px;
 <span class="pl-k">@XmlElement</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Employee<span class="pl-pds">"</span></span>)
 <span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">Employee</span>&gt;</span> authors;</pre></div>
 <p>This will produce an XML like this one:</p>
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">Report</span>&gt;
-    &lt;<span class="pl-ent">name</span>&gt;External Sales Report&lt;/<span class="pl-ent">name</span>&gt;
-    &lt;<span class="pl-ent">content</span>&gt;Eh, better than expected!&lt;/<span class="pl-ent">content</span>&gt;
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">Report</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>External Sales Report<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">Contents</span>&gt;Eh, better than expected!&lt;/<span class="pl-ent">Contents</span>&gt;
     &lt;<span class="pl-ent">Employee</span>&gt;
             ...
     &lt;/<span class="pl-ent">Employee</span>&gt;
@@ -509,9 +508,8 @@ vertical-align:1px;
 <span class="pl-k">@XmlElementWrapper</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Authors<span class="pl-pds">"</span></span>)
 <span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">Employee</span>&gt;</span> authors;</pre></div>
 <p>Which will produce an XML like this one:</p>
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">Report</span>&gt;
-    &lt;<span class="pl-ent">name</span>&gt;External Sales Report&lt;/<span class="pl-ent">name</span>&gt;
-    &lt;<span class="pl-ent">content</span>&gt;Eh, better than expected!&lt;/<span class="pl-ent">content</span>&gt;
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">Report</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>External Sales Report<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">Contents</span>&gt;Eh, better than expected!&lt;/<span class="pl-ent">Contents</span>&gt;
     &lt;<span class="pl-ent">Authors</span>&gt;
         &lt;<span class="pl-ent">Employee</span>&gt;
             ...
@@ -519,7 +517,7 @@ vertical-align:1px;
         &lt;<span class="pl-ent">Employee</span>&gt;
             ...
         &lt;/<span class="pl-ent">Employee</span>&gt;
-    &lt;<span class="pl-ent">Authors</span>&gt;
+    &lt;/<span class="pl-ent">Authors</span>&gt;
 &lt;/<span class="pl-ent">Report</span>&gt;</pre></div>
 <h2>Element order</h2>
 <p>Optionally, we can use the <em>propOrder</em> property of the <em>XmlType</em> annotation to specify the children tag ordering in the XML document. Inside <em>propOrder</em> we must put the Java attribute names, not the XML element names.</p>
@@ -567,7 +565,7 @@ jaxbM<span class="pl-k">.</span>marshal(book, <span class="pl-smi">System</span
 <span class="pl-c"><span class="pl-c">//</span> Create the JAXBMarshaller</span>
 <span class="pl-smi">Unmarshaller</span> jaxbU <span class="pl-k">=</span> jaxbC<span class="pl-k">.</span>createUnmarshaller();
 <span class="pl-c"><span class="pl-c">//</span> Create the object by reading from a file</span>
-<span class="pl-smi">Book</span> book <span class="pl-k">=</span> (<span class="pl-smi">Book</span>) jaxbU<span class="pl-k">.</span>unmarshal(book, <span class="pl-smi">XMLfile</span>);
+<span class="pl-smi">Book</span> book <span class="pl-k">=</span> (<span class="pl-smi">Book</span>) jaxbU<span class="pl-k">.</span>unmarshal(<span class="pl-smi">XMLfile</span>);
 <span class="pl-c"><span class="pl-c">//</span> Printout</span>
 <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(book);</pre></div>
 </body>

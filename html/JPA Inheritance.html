@@ -451,7 +451,7 @@ vertical-align:1px;
 </head>
 <body>
 <h1>JPA Inheritance</h1>
-<p><em>Rodrigo García Carmona</em> (v1.1.2)</p>
+<p><em>Rodrigo García Carmona</em> (v1.1.3)</p>
 <p>Relational databases don't feature object-oriented inheritance, so using super and subclasses with JPA can be tricky. There is no standard way to implement inheritance in a database, and therefore we must choose how we're going to represent this feature in the relational model.</p>
 <p>JPA supports three inheritance models, defined trough the Inheritance annotation:</p>
 <ul>
@@ -619,7 +619,7 @@ vertical-align:1px;
 <span class="pl-k">@Inheritance</span>(<span class="pl-c1">strategy</span><span class="pl-k">=</span><span class="pl-smi">InheritanceType</span><span class="pl-c1"><span class="pl-k">.</span>TABLE_PER_CLASS</span>)
 <span class="pl-k">public</span> <span class="pl-k">abstract</span> <span class="pl-k">class</span> <span class="pl-en">Project</span> {
 	<span class="pl-k">@Id</span>
-	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-c"><span class="pl-c">//</span> No other Id annotations should be put here</span>
 	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
 	<span class="pl-k">@Column</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>)
 	<span class="pl-k">private</span> <span class="pl-smi">String</span> name;
@@ -629,12 +629,20 @@ vertical-align:1px;
 <span class="pl-k">@Entity</span>
 <span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>largeprojects<span class="pl-pds">"</span></span>)
 <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">LargeProject</span> <span class="pl-k">extends</span> <span class="pl-e">Project</span>, <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
 	<span class="pl-k">private</span> <span class="pl-smi">Double</span> budget;
+	<span class="pl-c1">...</span>
 }
 
 <span class="pl-k">@Entity</span>
 <span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>smallprojects<span class="pl-pds">"</span></span>)
 <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">SmallProject</span> <span class="pl-k">extends</span> <span class="pl-e">Project</span>, <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
+	<span class="pl-k">@Id</span>
+	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
+	<span class="pl-c1">...</span>
 }</pre></div>
 </body>
 </html>

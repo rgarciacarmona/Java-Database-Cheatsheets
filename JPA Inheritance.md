@@ -1,6 +1,6 @@
 JPA Inheritance
 ===============
-*Rodrigo García Carmona* (v1.1.2)
+*Rodrigo García Carmona* (v1.1.3)
 
 Relational databases don't feature object-oriented inheritance, so using super and subclasses with JPA can be tricky. There is no standard way to implement inheritance in a database, and therefore we must choose how we're going to represent this feature in the relational model.
 
@@ -139,7 +139,7 @@ Which is implemented using these classes:
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Project {
 	@Id
-	// Other Id annotations as needed
+	// No other Id annotations should be put here
 	private Integer id;
 	@Column(name="name")
 	private String name;
@@ -149,11 +149,19 @@ public abstract class Project {
 @Entity
 @Table(name="largeprojects")
 public class LargeProject extends Project, implements Serializable {
+	@Id
+	// Other Id annotations as needed
+	private Integer id;
 	private Double budget;
+	...
 }
 
 @Entity
 @Table(name="smallprojects")
 public class SmallProject extends Project, implements Serializable {
+	@Id
+	// Other Id annotations as needed
+	private Integer id;
+	...
 }
 ```

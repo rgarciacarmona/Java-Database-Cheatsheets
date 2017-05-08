@@ -1,6 +1,6 @@
 JAXB Cheatsheet
 ===============
-*Rodrigo García Carmona* (v1.0.1)
+*Rodrigo García Carmona* (v1.0.2)
 
 Project setup
 -------------
@@ -57,9 +57,8 @@ private List<Employee> authors;
 This will produce an XML like this one:
 
 ```XML
-<Report>
-    <name>External Sales Report</name>
-    <content>Eh, better than expected!</content>
+<Report name="External Sales Report">
+    <Contents>Eh, better than expected!</Contents>
     <Employee>
             ...
     </Employee>
@@ -88,9 +87,8 @@ private List<Employee> authors;
 Which will produce an XML like this one:
 
 ```XML
-<Report>
-    <name>External Sales Report</name>
-    <content>Eh, better than expected!</content>
+<Report name="External Sales Report">
+    <Contents>Eh, better than expected!</Contents>
     <Authors>
         <Employee>
             ...
@@ -98,7 +96,7 @@ Which will produce an XML like this one:
         <Employee>
             ...
         </Employee>
-    <Authors>
+    </Authors>
 </Report>
 ```
 
@@ -169,7 +167,7 @@ JAXBContext jaxbC = JAXBContext.newInstance(Book.class);
 // Create the JAXBMarshaller
 Unmarshaller jaxbU = jaxbC.createUnmarshaller();
 // Create the object by reading from a file
-Book book = (Book) jaxbU.unmarshal(book, XMLfile);
+Book book = (Book) jaxbU.unmarshal(XMLfile);
 // Printout
 System.out.println(book);
 ```
