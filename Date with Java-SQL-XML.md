@@ -69,6 +69,18 @@ From *java.time.LocalDate* (or from *java.time.LocalDateTime*) to *java.sql.Date
 Date.valueOf(localDate);
 ```
 
+Show correctly the Date stored in SQLite
+----------------------------------------
+Using java.sql.Date we store the date in the database as the number of miliseconds since 1970.
+If we want to see it correctly using SQL without Java we will need to use the [Date and Time
+Functions of SQLite](https://www.sqlite.org/lang_datefunc.html) 
+
+In this case it will be:
+
+```SQL
+date(dateNumber/1000, 'unixepoch','localtime')
+```
+
 (Un)marshall a java.sql.Date from/to XML
 ----------------------------------------
 
