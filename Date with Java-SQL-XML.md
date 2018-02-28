@@ -1,6 +1,6 @@
 Date with Java, SQL and XML
 ===========================
-*Rodrigo García Carmona* (v1.2.0)
+*Rodrigo García Carmona & David González Márquez* (v1.2.1)
 
 Since there are several ways in which one can store time and date information using Java, it's important to use the most appropriate one in order to be able to store and retrieve this information from the database. We'll use several classes:
 
