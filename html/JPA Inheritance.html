@@ -4,9 +4,9 @@
 <title>JPA Inheritance</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
-/* GitHub stylesheet for MarkdownPad */
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
 /* Author: Nicolas Hery - http://nicolashery.com */
-/* Version: d5e7ce436666e7d4a2eeb12e7f8261dacceb3565 */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
 /* Source: https://github.com/nicolahery/markdownpad-github */
 
 /* RESET
@@ -212,6 +212,24 @@ pre code, pre tt {
   border: none;
 }
 
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
 /* QUOTES
 =============================================================================*/
 
@@ -267,185 +285,8 @@ table tr:nth-child(2n) {
 /* IMAGES
 =============================================================================*/
 
-.markdown-body img {
+img {
   max-width: 100%
-}
-</style>
-<style type="text/css">
-.highlight  { background: #ffffff; }
-.highlight .c { color: #999988; font-style: italic } /* Comment */
-.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
-.highlight .k { font-weight: bold } /* Keyword */
-.highlight .o { font-weight: bold } /* Operator */
-.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
-.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
-.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #aa0000 } /* Generic.Error */
-.highlight .gh { color: #999999 } /* Generic.Heading */
-.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
-.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #555555 } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
-.highlight .gt { color: #aa0000 } /* Generic.Traceback */
-.highlight .kc { font-weight: bold } /* Keyword.Constant */
-.highlight .kd { font-weight: bold } /* Keyword.Declaration */
-.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
-.highlight .kr { font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
-.highlight .m { color: #009999 } /* Literal.Number */
-.highlight .s { color: #d14 } /* Literal.String */
-.highlight .na { color: #008080 } /* Name.Attribute */
-.highlight .nb { color: #0086B3 } /* Name.Builtin */
-.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
-.highlight .no { color: #008080 } /* Name.Constant */
-.highlight .ni { color: #800080 } /* Name.Entity */
-.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
-.highlight .nn { color: #555555 } /* Name.Namespace */
-.highlight .nt { color: #000080 } /* Name.Tag */
-.highlight .nv { color: #008080 } /* Name.Variable */
-.highlight .ow { font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mf { color: #009999 } /* Literal.Number.Float */
-.highlight .mh { color: #009999 } /* Literal.Number.Hex */
-.highlight .mi { color: #009999 } /* Literal.Number.Integer */
-.highlight .mo { color: #009999 } /* Literal.Number.Oct */
-.highlight .sb { color: #d14 } /* Literal.String.Backtick */
-.highlight .sc { color: #d14 } /* Literal.String.Char */
-.highlight .sd { color: #d14 } /* Literal.String.Doc */
-.highlight .s2 { color: #d14 } /* Literal.String.Double */
-.highlight .se { color: #d14 } /* Literal.String.Escape */
-.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
-.highlight .si { color: #d14 } /* Literal.String.Interpol */
-.highlight .sx { color: #d14 } /* Literal.String.Other */
-.highlight .sr { color: #009926 } /* Literal.String.Regex */
-.highlight .s1 { color: #d14 } /* Literal.String.Single */
-.highlight .ss { color: #990073 } /* Literal.String.Symbol */
-.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #008080 } /* Name.Variable.Class */
-.highlight .vg { color: #008080 } /* Name.Variable.Global */
-.highlight .vi { color: #008080 } /* Name.Variable.Instance */
-.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
-.pl-c {
-    color: #969896;
-}
-
-.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
-    color: #0086b3;
-}
-
-.pl-e,.pl-en {
-    color: #795da3;
-}
-
-.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
-    color: #333;
-}
-
-.pl-ent {
-    color: #63a35c;
-}
-
-.pl-k,.pl-s,.pl-st {
-    color: #a71d5d;
-}
-
-.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
-    color: #df5000;
-}
-
-.pl-id {
-    color: #b52a1d;
-}
-
-.pl-ii {
-    background-color: #b52a1d;
-    color: #f8f8f8;
-}
-
-.pl-sr .pl-cce {
-    color: #63a35c;
-    font-weight: bold;
-}
-
-.pl-ml {
-    color: #693a17;
-}
-
-.pl-mh,.pl-mh .pl-en,.pl-ms {
-    color: #1d3e81;
-    font-weight: bold;
-}
-
-.pl-mq {
-    color: #008080;
-}
-
-.pl-mi {
-    color: #333;
-    font-style: italic;
-}
-
-.pl-mb {
-    color: #333;
-    font-weight: bold;
-}
-
-.pl-md,.pl-mdhf {
-    background-color: #ffecec;
-    color: #bd2c00;
-}
-
-.pl-mdht,.pl-mi1 {
-    background-color: #eaffea;
-    color: #55a532;
-}
-
-.pl-mdr {
-    color: #795da3;
-    font-weight: bold;
-}
-
-.pl-mo {
-    color: #1d3e81;
-}
-.task-list {
-padding-left:10px;
-margin-bottom:0;
-}
-
-.task-list li {
-    margin-left: 20px;
-}
-
-.task-list-item {
-list-style-type:none;
-padding-left:10px;
-}
-
-.task-list-item label {
-font-weight:400;
-}
-
-.task-list-item.enabled label {
-cursor:pointer;
-}
-
-.task-list-item+.task-list-item {
-margin-top:3px;
-}
-
-.task-list-item-checkbox {
-display:inline-block;
-margin-left:-20px;
-margin-right:3px;
-vertical-align:1px;
 }
 </style>
 </head>
@@ -464,186 +305,121 @@ vertical-align:1px;
 <p>In this strategy, a single table is used to store all instances of the entire inheritance hierarchy. The table will have a column for every attribute of every class in the hierarchy and a discriminator column; used to determine which class the particular row belongs to. This column will contain a value specific to each class.</p>
 <p>A single table looks like this:</p>
 <p><strong>project</strong></p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-<th>proj_type</th>
-<th>name</th>
-<th>budget</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>L</td>
-<td>Marketing</td>
-<td>5000.0</td>
-</tr>
-<tr>
-<td>2</td>
-<td>S</td>
-<td>Legal</td>
-<td>null</td>
-</tr></tbody></table>
+<p>|id |proj_type  |name       |budget
+|----|----------|-----------|------
+|1   |L         |Marketing  |5000.0
+|2   |S         |Legal      |null</p>
 <p>And is implemented using these classes:</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">@Entity</span>
-<span class="pl-k">@Inheritance</span>(<span class="pl-c1">strategy</span><span class="pl-k">=</span><span class="pl-smi">InheritanceType</span><span class="pl-c1"><span class="pl-k">.</span>SINGLE_TABLE</span>)
-<span class="pl-k">@DiscriminatorColumn</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>proj_type<span class="pl-pds">"</span></span>)
-<span class="pl-k">@ForceDiscriminator</span>
-<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>projects<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">abstract</span> <span class="pl-k">class</span> <span class="pl-en">Project</span> {
-	<span class="pl-k">@Id</span>
-	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
-	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
-	<span class="pl-c1">...</span>
+<pre><code class="language-Java">@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name=&quot;proj_type&quot;)
+@ForceDiscriminator
+@Table(name=&quot;projects&quot;)
+public abstract class Project {
+    @Id
+    // Other Id annotations as needed
+    private Integer id;
+    ...
 }
 
-<span class="pl-k">@Entity</span>
-<span class="pl-k">@DiscriminatorValue</span>(<span class="pl-s"><span class="pl-pds">"</span>L<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">LargeProject</span> <span class="pl-k">extends</span> <span class="pl-e">Project</span>, <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-	<span class="pl-k">private</span> <span class="pl-smi">Double</span> budget;
-}	
+@Entity
+@DiscriminatorValue(&quot;L&quot;)
+public class LargeProject extends Project, implements Serializable {
+    private Double budget;
+}   
 
-<span class="pl-k">@Entity</span>
-<span class="pl-k">@DiscriminatorValue</span>(<span class="pl-s"><span class="pl-pds">"</span>S<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">SmallProject</span> <span class="pl-k">extends</span> <span class="pl-e">Project</span>, <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-}</pre></div>
+@Entity
+@DiscriminatorValue(&quot;S&quot;)
+public class SmallProject extends Project, implements Serializable {
+}
+</code></pre>
 <h2>One Table Per Class Inheritance</h2>
 <p>This inheritance strategy is used when we have a relational model that closely follows the object model, so it's usually employed when the object model is designed first.</p>
 <p>With this strategy, a table is defined for each class in the inheritance hierarchy, including the parent class. Each table only contains the attributes specific to the class it represents, and the parent class' table must contain a discriminator column, like in the single table strategy.</p>
 <p>Each table must also store the object's primary key, but this is only defined in the root class. All classes in the hierarchy must share the same id attribute.</p>
 <p>A set of tables for this strategy look like this:</p>
 <p><strong>projects</strong></p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-<th>proj_type</th>
-<th>name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>L</td>
-<td>Marketing</td>
-</tr>
-<tr>
-<td>2</td>
-<td>S</td>
-<td>Legal</td>
-</tr></tbody></table>
+<p>|id |proj_type  |name
+|---|-----------|---------
+|1  |L          |Marketing
+|2  |S          |Legal</p>
 <p><strong>smallprojects</strong></p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-</tr></tbody></table>
+<p>|id|
+|---
+|2 |</p>
 <p><strong>largeprojects</strong></p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-<th>budget</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>5000.0</td>
-</tr></tbody></table>
+<p>|id |budget
+|---|------
+|1  |5000.0</p>
 <p>And are implemented using these classes:</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">@Entity</span>
-<span class="pl-k">@Inheritance</span>(<span class="pl-c1">strategy</span><span class="pl-k">=</span><span class="pl-smi">InheritanceType</span><span class="pl-c1"><span class="pl-k">.</span>JOINED</span>)
-<span class="pl-k">@DiscriminatorColumn</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>proj_type<span class="pl-pds">"</span></span>)
-<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>projects<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">abstract</span> <span class="pl-k">class</span> <span class="pl-en">Project</span> {
-	<span class="pl-k">@Id</span>
-	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
-	<span class="pl-k">private</span> integer id;
-	<span class="pl-c1">...</span>
+<pre><code class="language-Java">@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name=&quot;proj_type&quot;)
+@Table(name=&quot;projects&quot;)
+public abstract class Project {
+    @Id
+    // Other Id annotations as needed
+    private integer id;
+    ...
 }
 
-<span class="pl-k">@Entity</span>
-<span class="pl-k">@DiscriminatorValue</span>(<span class="pl-s"><span class="pl-pds">"</span>L<span class="pl-pds">"</span></span>)
-<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>largeprojects<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">LargeProject</span> <span class="pl-k">extends</span> <span class="pl-e">Project</span>, <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-	<span class="pl-k">private</span> <span class="pl-smi">Double</span> budget;
+@Entity
+@DiscriminatorValue(&quot;L&quot;)
+@Table(name=&quot;largeprojects&quot;)
+public class LargeProject extends Project, implements Serializable {
+    private Double budget;
 }
 
-<span class="pl-k">@Entity</span>
-<span class="pl-k">@DiscriminatorValue</span>(<span class="pl-s"><span class="pl-pds">"</span>S<span class="pl-pds">"</span></span>)
-<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>smallprojects<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">SmallProject</span> <span class="pl-k">extends</span> <span class="pl-e">Project</span>, <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-}</pre></div>
+@Entity
+@DiscriminatorValue(&quot;S&quot;)
+@Table(name=&quot;smallprojects&quot;)
+public class SmallProject extends Project, implements Serializable {
+}
+</code></pre>
 <h2>One Table Per Subclass Inheritance</h2>
 <p>This inheritance strategy is used when we want to keep the relational model oblivious to it, since no discriminator column is required and each class is in a different, completely separated, table.</p>
 <p>In this strategy, we use an abstract parent class and several children classes. Each child class is realized as a table that stores all the attributes of that class and the superclass.</p>
 <p>Here's an example of a possible table structure:</p>
 <p><strong>smallprojects</strong></p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-<th>name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>Legal</td>
-</tr></tbody></table>
+<p>|id |name
+|---|-----
+|2  |Legal</p>
 <p><strong>largeprojects</strong></p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-<th>name</th>
-<th>budget</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Marketing</td>
-<td>5000.0</td>
-</tr></tbody></table>
+<p>|id |name       |budget
+|---|-----------|------
+|1  |Marketing  |5000.0</p>
 <p>Which is implemented using these classes:</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">@Entity</span>
-<span class="pl-k">@Inheritance</span>(<span class="pl-c1">strategy</span><span class="pl-k">=</span><span class="pl-smi">InheritanceType</span><span class="pl-c1"><span class="pl-k">.</span>TABLE_PER_CLASS</span>)
-<span class="pl-k">public</span> <span class="pl-k">abstract</span> <span class="pl-k">class</span> <span class="pl-en">Project</span> {
-	<span class="pl-k">@Id</span>
-	<span class="pl-c"><span class="pl-c">//</span> No other Id annotations should be put here</span>
-	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
-	<span class="pl-k">@Column</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>)
-	<span class="pl-k">private</span> <span class="pl-smi">String</span> name;
-	<span class="pl-c1">...</span>
+<pre><code class="language-Java">@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public abstract class Project {
+    @Id
+    // No other Id annotations should be put here
+    private Integer id;
+    @Column(name=&quot;name&quot;)
+    private String name;
+    ...
 }
 
-<span class="pl-k">@Entity</span>
-<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>largeprojects<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">LargeProject</span> <span class="pl-k">extends</span> <span class="pl-e">Project</span>, <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-	<span class="pl-k">@Id</span>
-	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
-	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
-	<span class="pl-k">private</span> <span class="pl-smi">Double</span> budget;
-	<span class="pl-c1">...</span>
+@Entity
+@Table(name=&quot;largeprojects&quot;)
+public class LargeProject extends Project, implements Serializable {
+    @Id
+    // Other Id annotations as needed
+    private Integer id;
+    private Double budget;
+    ...
 }
 
-<span class="pl-k">@Entity</span>
-<span class="pl-k">@Table</span>(<span class="pl-c1">name</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>smallprojects<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">SmallProject</span> <span class="pl-k">extends</span> <span class="pl-e">Project</span>, <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-	<span class="pl-k">@Id</span>
-	<span class="pl-c"><span class="pl-c">//</span> Other Id annotations as needed</span>
-	<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
-	<span class="pl-c1">...</span>
-}</pre></div>
+@Entity
+@Table(name=&quot;smallprojects&quot;)
+public class SmallProject extends Project, implements Serializable {
+    @Id
+    // Other Id annotations as needed
+    private Integer id;
+    ...
+}
+</code></pre>
+
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

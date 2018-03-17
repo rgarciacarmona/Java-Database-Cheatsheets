@@ -4,9 +4,9 @@
 <title>JAXB Cheatsheet</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
-/* GitHub stylesheet for MarkdownPad */
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
 /* Author: Nicolas Hery - http://nicolashery.com */
-/* Version: d5e7ce436666e7d4a2eeb12e7f8261dacceb3565 */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
 /* Source: https://github.com/nicolahery/markdownpad-github */
 
 /* RESET
@@ -212,6 +212,24 @@ pre code, pre tt {
   border: none;
 }
 
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
 /* QUOTES
 =============================================================================*/
 
@@ -267,185 +285,8 @@ table tr:nth-child(2n) {
 /* IMAGES
 =============================================================================*/
 
-.markdown-body img {
+img {
   max-width: 100%
-}
-</style>
-<style type="text/css">
-.highlight  { background: #ffffff; }
-.highlight .c { color: #999988; font-style: italic } /* Comment */
-.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
-.highlight .k { font-weight: bold } /* Keyword */
-.highlight .o { font-weight: bold } /* Operator */
-.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
-.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
-.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #aa0000 } /* Generic.Error */
-.highlight .gh { color: #999999 } /* Generic.Heading */
-.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
-.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #555555 } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
-.highlight .gt { color: #aa0000 } /* Generic.Traceback */
-.highlight .kc { font-weight: bold } /* Keyword.Constant */
-.highlight .kd { font-weight: bold } /* Keyword.Declaration */
-.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
-.highlight .kr { font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
-.highlight .m { color: #009999 } /* Literal.Number */
-.highlight .s { color: #d14 } /* Literal.String */
-.highlight .na { color: #008080 } /* Name.Attribute */
-.highlight .nb { color: #0086B3 } /* Name.Builtin */
-.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
-.highlight .no { color: #008080 } /* Name.Constant */
-.highlight .ni { color: #800080 } /* Name.Entity */
-.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
-.highlight .nn { color: #555555 } /* Name.Namespace */
-.highlight .nt { color: #000080 } /* Name.Tag */
-.highlight .nv { color: #008080 } /* Name.Variable */
-.highlight .ow { font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mf { color: #009999 } /* Literal.Number.Float */
-.highlight .mh { color: #009999 } /* Literal.Number.Hex */
-.highlight .mi { color: #009999 } /* Literal.Number.Integer */
-.highlight .mo { color: #009999 } /* Literal.Number.Oct */
-.highlight .sb { color: #d14 } /* Literal.String.Backtick */
-.highlight .sc { color: #d14 } /* Literal.String.Char */
-.highlight .sd { color: #d14 } /* Literal.String.Doc */
-.highlight .s2 { color: #d14 } /* Literal.String.Double */
-.highlight .se { color: #d14 } /* Literal.String.Escape */
-.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
-.highlight .si { color: #d14 } /* Literal.String.Interpol */
-.highlight .sx { color: #d14 } /* Literal.String.Other */
-.highlight .sr { color: #009926 } /* Literal.String.Regex */
-.highlight .s1 { color: #d14 } /* Literal.String.Single */
-.highlight .ss { color: #990073 } /* Literal.String.Symbol */
-.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #008080 } /* Name.Variable.Class */
-.highlight .vg { color: #008080 } /* Name.Variable.Global */
-.highlight .vi { color: #008080 } /* Name.Variable.Instance */
-.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
-.pl-c {
-    color: #969896;
-}
-
-.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
-    color: #0086b3;
-}
-
-.pl-e,.pl-en {
-    color: #795da3;
-}
-
-.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
-    color: #333;
-}
-
-.pl-ent {
-    color: #63a35c;
-}
-
-.pl-k,.pl-s,.pl-st {
-    color: #a71d5d;
-}
-
-.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
-    color: #df5000;
-}
-
-.pl-id {
-    color: #b52a1d;
-}
-
-.pl-ii {
-    background-color: #b52a1d;
-    color: #f8f8f8;
-}
-
-.pl-sr .pl-cce {
-    color: #63a35c;
-    font-weight: bold;
-}
-
-.pl-ml {
-    color: #693a17;
-}
-
-.pl-mh,.pl-mh .pl-en,.pl-ms {
-    color: #1d3e81;
-    font-weight: bold;
-}
-
-.pl-mq {
-    color: #008080;
-}
-
-.pl-mi {
-    color: #333;
-    font-style: italic;
-}
-
-.pl-mb {
-    color: #333;
-    font-weight: bold;
-}
-
-.pl-md,.pl-mdhf {
-    background-color: #ffecec;
-    color: #bd2c00;
-}
-
-.pl-mdht,.pl-mi1 {
-    background-color: #eaffea;
-    color: #55a532;
-}
-
-.pl-mdr {
-    color: #795da3;
-    font-weight: bold;
-}
-
-.pl-mo {
-    color: #1d3e81;
-}
-.task-list {
-padding-left:10px;
-margin-bottom:0;
-}
-
-.task-list li {
-    margin-left: 20px;
-}
-
-.task-list-item {
-list-style-type:none;
-padding-left:10px;
-}
-
-.task-list-item label {
-font-weight:400;
-}
-
-.task-list-item.enabled label {
-cursor:pointer;
-}
-
-.task-list-item+.task-list-item {
-margin-top:3px;
-}
-
-.task-list-item-checkbox {
-display:inline-block;
-margin-left:-20px;
-margin-right:3px;
-vertical-align:1px;
 }
 </style>
 </head>
@@ -464,10 +305,11 @@ vertical-align:1px;
 <li>Have public getters and setters for all annotated attributes.</li>
 </ul>
 <p>We must annotate every class that will be part of a XML document as follows:</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">@XmlAccessorType</span>(<span class="pl-smi">XmlAccessType</span><span class="pl-c1"><span class="pl-k">.</span>FIELD</span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Employee</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-<span class="pl-c1">...</span>
-}</pre></div>
+<pre><code class="language-Java">@XmlAccessorType(XmlAccessType.FIELD)
+public class Employee implements Serializable {
+...
+}
+</code></pre>
 <p>With <em>XMLAccessorType</em> we're indicating that the JAXB will look inside the class for XML annotations, and with FIELD that those will be found in the class attributes (also called fields), instead of in the methods.</p>
 <h2>Annotating Attributes</h2>
 <p>Since we chose the FIELD annotation method, we must annotate every class' attribute with one of the following annotations:</p>
@@ -478,60 +320,66 @@ vertical-align:1px;
 </ul>
 <p>In both <em>XmlAttribute</em> and <em>XmlElement</em> we can specify a particular name by using the <em>name</em> property. If we don't, the Java attribute name will be used by default. We can also use the <em>required</em> property (set to true or false) to indicate if the attribute or tag is mandatory. By default it's true.</p>
 <p>Here's an example of these annotations:</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">@XmlTransient</span>
-<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
-<span class="pl-k">@XmlAttribute</span>
-<span class="pl-k">private</span> <span class="pl-smi">String</span> name;
-<span class="pl-k">@XmlElement</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Contents<span class="pl-pds">"</span></span>, <span class="pl-c1">required</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span>)
-<span class="pl-k">private</span> <span class="pl-smi">String</span> content;
-<span class="pl-k">@XmlElement</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Employee<span class="pl-pds">"</span></span>)
-<span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">Employee</span>&gt;</span> authors;</pre></div>
+<pre><code class="language-Java">@XmlTransient
+private Integer id;
+@XmlAttribute
+private String name;
+@XmlElement(name = &quot;Contents&quot;, required = &quot;false&quot;)
+private String content;
+@XmlElement(name = &quot;Employee&quot;)
+private List&lt;Employee&gt; authors;
+</code></pre>
 <p>This will produce an XML like this one:</p>
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">Report</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>External Sales Report<span class="pl-pds">"</span></span>&gt;
-    &lt;<span class="pl-ent">Contents</span>&gt;Eh, better than expected!&lt;/<span class="pl-ent">Contents</span>&gt;
-    &lt;<span class="pl-ent">Employee</span>&gt;
+<pre><code class="language-XML">&lt;Report name=&quot;External Sales Report&quot;&gt;
+    &lt;Contents&gt;Eh, better than expected!&lt;/Contents&gt;
+    &lt;Employee&gt;
             ...
-    &lt;/<span class="pl-ent">Employee</span>&gt;
-    &lt;<span class="pl-ent">Employee</span>&gt;
+    &lt;/Employee&gt;
+    &lt;Employee&gt;
             ...
-    &lt;/<span class="pl-ent">Employee</span>&gt;
-&lt;/<span class="pl-ent">Report</span>&gt;</pre></div>
+    &lt;/Employee&gt;
+&lt;/Report&gt;
+</code></pre>
 <p>It's important to note that the <em>Employee</em> class must also be annotated, since it's also a part of the XML document.</p>
 <p>Also note that this applies to <em>Lists</em> too, like the one we had with <em>Employee</em> objects. In this case, each <em>Employee</em> will be inside its own <em>Employee</em> tag. If we want to surround all of them with a wrapper tag, we must add the <em>XMLElementWrapper</em> annotation:</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">@XmlTransient</span>
-<span class="pl-k">private</span> <span class="pl-smi">Integer</span> id;
-<span class="pl-k">@XmlAttribute</span>
-<span class="pl-k">private</span> <span class="pl-smi">String</span> name;
-<span class="pl-k">@XmlElement</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Contents<span class="pl-pds">"</span></span>)
-<span class="pl-k">private</span> <span class="pl-smi">String</span> content;
-<span class="pl-k">@XmlElement</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Employee<span class="pl-pds">"</span></span>)
-<span class="pl-k">@XmlElementWrapper</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Authors<span class="pl-pds">"</span></span>)
-<span class="pl-k">private</span> <span class="pl-k">List&lt;<span class="pl-smi">Employee</span>&gt;</span> authors;</pre></div>
+<pre><code class="language-Java">@XmlTransient
+private Integer id;
+@XmlAttribute
+private String name;
+@XmlElement(name = &quot;Contents&quot;)
+private String content;
+@XmlElement(name = &quot;Employee&quot;)
+@XmlElementWrapper(name = &quot;Authors&quot;)
+private List&lt;Employee&gt; authors;
+</code></pre>
 <p>Which will produce an XML like this one:</p>
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">Report</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>External Sales Report<span class="pl-pds">"</span></span>&gt;
-    &lt;<span class="pl-ent">Contents</span>&gt;Eh, better than expected!&lt;/<span class="pl-ent">Contents</span>&gt;
-    &lt;<span class="pl-ent">Authors</span>&gt;
-        &lt;<span class="pl-ent">Employee</span>&gt;
+<pre><code class="language-XML">&lt;Report name=&quot;External Sales Report&quot;&gt;
+    &lt;Contents&gt;Eh, better than expected!&lt;/Contents&gt;
+    &lt;Authors&gt;
+        &lt;Employee&gt;
             ...
-        &lt;/<span class="pl-ent">Employee</span>&gt;
-        &lt;<span class="pl-ent">Employee</span>&gt;
+        &lt;/Employee&gt;
+        &lt;Employee&gt;
             ...
-        &lt;/<span class="pl-ent">Employee</span>&gt;
-    &lt;/<span class="pl-ent">Authors</span>&gt;
-&lt;/<span class="pl-ent">Report</span>&gt;</pre></div>
+        &lt;/Employee&gt;
+    &lt;/Authors&gt;
+&lt;/Report&gt;
+</code></pre>
 <h2>Element order</h2>
 <p>Optionally, we can use the <em>propOrder</em> property of the <em>XmlType</em> annotation to specify the children tag ordering in the XML document. Inside <em>propOrder</em> we must put the Java attribute names, not the XML element names.</p>
 <p>Here's an example:</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">@XmlAccessorType</span>(<span class="pl-smi">XmlAccessType</span><span class="pl-c1"><span class="pl-k">.</span>FIELD</span>)
-<span class="pl-k">@XmlType</span>(<span class="pl-c1">propOrder</span> <span class="pl-k">=</span> { <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>dob<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>address<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>salary<span class="pl-pds">"</span></span> })
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Employee</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-}</pre></div>
+<pre><code class="language-Java">@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = { &quot;name&quot;, &quot;dob&quot;, &quot;address&quot;, &quot;salary&quot; })
+public class Employee implements Serializable {
+}
+</code></pre>
 <h2>Root element</h2>
 <p>Every XML document must have a root element: the first tag of the document. We must annotate every class that needs to fulfil this role in at least one of our XML documents with the <em>XMLRootElement</em> annotation. Like this:</p>
-<div class="highlight highlight-source-java"><pre><span class="pl-k">@XmlAccessorType</span>(<span class="pl-smi">XmlAccessType</span><span class="pl-c1"><span class="pl-k">.</span>FIELD</span>)
-<span class="pl-k">@XmlRootElement</span>(<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Employee<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Employee</span> <span class="pl-k">implements</span> <span class="pl-e">Serializable</span> {
-}</pre></div>
+<pre><code class="language-Java">@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = &quot;Employee&quot;)
+public class Employee implements Serializable {
+}
+</code></pre>
 <h2>Marshalling</h2>
 <p>To marshall Java objects into a XML document we must follow these steps:</p>
 <ol>
@@ -539,20 +387,21 @@ vertical-align:1px;
 <li>Create a <em>Marshaller</em> using the <em>JAXBContext</em> object.</li>
 <li>Call the <em>marshall</em> method of the <em>Marshaller</em>.</li>
 </ol>
-<div class="highlight highlight-source-java"><pre><span class="pl-c"><span class="pl-c">//</span> Create the object</span>
-<span class="pl-smi">Book</span> book <span class="pl-k">=</span> <span class="pl-k">new</span> book();
-book<span class="pl-k">.</span>setName(“<span class="pl-smi">Dune</span>”);
-<span class="pl-smi">Book</span><span class="pl-k">.</span>setAuthor(“<span class="pl-smi">Frank</span> <span class="pl-smi">Herbert</span>”)
-<span class="pl-c"><span class="pl-c">//</span> Create the JAXBContext</span>
-<span class="pl-smi">JAXBContext</span> jaxbC <span class="pl-k">=</span> <span class="pl-smi">JAXBContext</span><span class="pl-k">.</span>newInstance(<span class="pl-smi">Book</span><span class="pl-k">.</span>class);
-<span class="pl-c"><span class="pl-c">//</span> Create the JAXBMarshaller</span>
-<span class="pl-smi">Marshaller</span> jaxbM <span class="pl-k">=</span> jaxbC<span class="pl-k">.</span>createMarshaller();
-<span class="pl-c"><span class="pl-c">//</span> Pretty formatting     </span>
-jaxbM<span class="pl-k">.</span>setProperty(<span class="pl-smi">Marshaller</span><span class="pl-c1"><span class="pl-k">.</span>JAXB_FORMATTED_OUTPUT</span>,<span class="pl-smi">Boolean</span><span class="pl-c1"><span class="pl-k">.</span>TRUE</span>);
-<span class="pl-c"><span class="pl-c">//</span> Write to a file</span>
-jaxbM<span class="pl-k">.</span>marshal(book, <span class="pl-smi">XMLfile</span>);
-<span class="pl-c"><span class="pl-c">//</span> Printout</span>
-jaxbM<span class="pl-k">.</span>marshal(book, <span class="pl-smi">System</span><span class="pl-k">.</span>out);</pre></div>
+<pre><code class="language-Java">// Create the object
+Book book = new book();
+book.setName(“Dune”);
+Book.setAuthor(“Frank Herbert”)
+// Create the JAXBContext
+JAXBContext jaxbC = JAXBContext.newInstance(Book.class);
+// Create the JAXBMarshaller
+Marshaller jaxbM = jaxbC.createMarshaller();
+// Pretty formatting     
+jaxbM.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,Boolean.TRUE);
+// Write to a file
+jaxbM.marshal(book, XMLfile);
+// Printout
+jaxbM.marshal(book, System.out);
+</code></pre>
 <h2>Unmarshalling</h2>
 <p>To unmarshall a XML document into Java objects we must follow these steps:</p>
 <ol>
@@ -560,14 +409,16 @@ jaxbM<span class="pl-k">.</span>marshal(book, <span class="pl-smi">System</span
 <li>Create an <em>Unmarshaller</em> using the <em>JAXBContext</em> object.</li>
 <li>Call the <em>unmarshall</em> method of the <em>Unmarshaller</em>.</li>
 </ol>
-<div class="highlight highlight-source-java"><pre><span class="pl-c"><span class="pl-c">//</span> Create the JAXBContext</span>
-<span class="pl-smi">JAXBContext</span> jaxbC <span class="pl-k">=</span> <span class="pl-smi">JAXBContext</span><span class="pl-k">.</span>newInstance(<span class="pl-smi">Book</span><span class="pl-k">.</span>class);
-<span class="pl-c"><span class="pl-c">//</span> Create the JAXBMarshaller</span>
-<span class="pl-smi">Unmarshaller</span> jaxbU <span class="pl-k">=</span> jaxbC<span class="pl-k">.</span>createUnmarshaller();
-<span class="pl-c"><span class="pl-c">//</span> Create the object by reading from a file</span>
-<span class="pl-smi">Book</span> book <span class="pl-k">=</span> (<span class="pl-smi">Book</span>) jaxbU<span class="pl-k">.</span>unmarshal(<span class="pl-smi">XMLfile</span>);
-<span class="pl-c"><span class="pl-c">//</span> Printout</span>
-<span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(book);</pre></div>
+<pre><code class="language-Java">// Create the JAXBContext
+JAXBContext jaxbC = JAXBContext.newInstance(Book.class);
+// Create the JAXBMarshaller
+Unmarshaller jaxbU = jaxbC.createUnmarshaller();
+// Create the object by reading from a file
+Book book = (Book) jaxbU.unmarshal(XMLfile);
+// Printout
+System.out.println(book);
+</code></pre>
+
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

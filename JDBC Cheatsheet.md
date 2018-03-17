@@ -1,6 +1,6 @@
 JDBC Cheatsheet
 ===============
-*Rodrigo García Carmona* (v1.1.4)
+*Rodrigo García Carmona* (v1.2)
 
 This guide has been created with SQLite in mind.
 
@@ -170,4 +170,16 @@ Or we can undo every change we made since the last commit:
 
 ```Java
 c.rollback();
+```
+
+Getting the Primary Key of the Last Inserted Row
+------------------------------------------------
+
+After inserting a new row in a table without specifying the primary key, you can get the primary key that the SQLite database has assigned by running this SELECT query:
+
+```Java
+String query = "SELECT last_insert_rowid() AS lastId";
+PreparedStatement p = c.prepareStatement(query);
+ResultSet rs = p.executeQuery();
+Integer lastId = rs1.getInt("lastId");
 ```
