@@ -140,7 +140,7 @@ Which is implemented using these classes:
 public abstract class Project {
 	@Id
 	// No other Id annotations should be put here
-	private Integer id;
+	protected Integer id;
 	@Column(name="name")
 	private String name;
 	...
@@ -154,6 +154,7 @@ public class LargeProject extends Project, implements Serializable {
 	private Integer id;
 	private Double budget;
 	...
+	// Get and set this id attribute, not the one in the superclass
 }
 
 @Entity
@@ -163,5 +164,6 @@ public class SmallProject extends Project, implements Serializable {
 	// Other Id annotations as needed
 	private Integer id;
 	...
+	// Get and set this id attribute, not the one in the superclass
 }
 ```

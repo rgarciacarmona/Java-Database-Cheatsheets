@@ -289,19 +289,194 @@ img {
   max-width: 100%
 }
 </style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
 </head>
 <body>
-<h1>JPA Cheatsheet</h1>
+<h1 id="jpa-cheatsheet">JPA Cheatsheet</h1>
 <p><em>Rodrigo García Carmona</em> (v1.2.0)</p>
 <p>This guide has been written with SQLite and EclipseLink in mind.</p>
-<h2>Project setup</h2>
+<h2 id="project-setup">Project setup</h2>
 <p>To be able to use JPA we must add the JPA provider (in our case, EclipseLink) to our project. This is done by importing the following two jar files:</p>
 <ul>
-<li><em>eclipselink.jar</em></li>
-<li><em>javax.persistence.jar</em></li>
-</ul>
+<li><em>eclipselink.jar</em></li><li><em>javax.persistence.jar</em></li></ul>
 <p>We must also add a <em>META-INF</em> folder in our <em>src</em> (source code) folder and put a <em>persistence.xml</em> file inside it. The <em>persistence.xml</em> should be similar to this one:</p>
-<pre><code class="language-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<pre><code class="lang-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;persistence xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
 xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/persistence
 http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&quot;
@@ -324,8 +499,8 @@ version=&quot;2.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/persistence&quot;
         &lt;!-- Fill if we need user and password --&gt;
         &lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;&quot; /&gt;
         &lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;&quot; /&gt;
-        
-        &lt;!-- JPA creates the database schema if it doesn't exist --&gt;
+
+        &lt;!-- JPA creates the database schema if it doesn&#39;t exist --&gt;
         &lt;property name=&quot;eclipselink.ddl-generation&quot; value=&quot;create-tables&quot; /&gt;
     &lt;/properties&gt;
 
@@ -334,139 +509,163 @@ version=&quot;2.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/persistence&quot;
 </code></pre>
 <p>In this file, we should change:</p>
 <ul>
-<li>The <em>provider-name</em>. We're going to refer to this name in the Entity Manager creation.</li>
-<li>The <em>Entity Classes</em> that we're going to model.</li>
-<li>The <em>database-url</em> that points to our database's location.</li>
-</ul>
-<p>Finally, we must also annotate (see later in this same document) all the entity classes we're going to manage with JPA.</p>
-<p><strong>An important note:</strong> Before executing any JPA code in a project that also uses JDBC (like our examples) <strong>be completely sure</strong> that you've already created the database's tables. This is needed so we're certain that the database schema is the one we want, and not any other one that JPA could decide works better.</p>
-<h2>Working with JPA</h2>
+<li>The <em>provider-name</em>. We’re going to refer to this name in the Entity Manager creation.</li><li>The <em>Entity Classes</em> that we’re going to model.</li><li>The <em>database-url</em> that points to our database’s location.</li></ul>
+<p>Finally, we must also annotate (see later in this same document) all the entity classes we’re going to manage with JPA.</p>
+<p><strong>An important note:</strong> Before executing any JPA code in a project that also uses JDBC (like our examples) <strong>be completely sure</strong> that you’ve already created the database’s tables. This is needed so we’re certain that the database schema is the one we want, and not any other one that JPA could decide works better.</p>
+<h2 id="working-with-jpa">Working with JPA</h2>
 <p>To actually work with JPA, the first thing to do is create an Entity Manager, which fulfills the same role as a connection in JDBC:</p>
-<pre><code class="language-Java">EntityManager em = Persistence.createEntityManagerFactory(&quot;provider-name&quot;).
-                   createEntityManager(); 
+<pre><code class="lang-Java">EntityManager em = Persistence.createEntityManagerFactory(&quot;provider-name&quot;).
+                   createEntityManager();
 </code></pre>
 <p>Like with JDBC, if we work with SQLite, we must enable support for foreign key constraints. In order to do that, these lines of code must be run just after the creation of the Entity Manager:</p>
-<pre><code class="language-Java">em.getTransaction().begin();
+<pre><code class="lang-Java">em.getTransaction().begin();
 em.createNativeQuery(&quot;PRAGMA foreign_keys=ON&quot;).executeUpdate();
 em.getTransaction().commit();
 </code></pre>
 <p>Note that <em>provider-name</em> is the one that we specified in the <em>persistence.xml</em> file before.</p>
 <p>After working with the database, we must remember to close the Entity Manager:</p>
-<pre><code class="language-Java">em.close();
+<pre><code class="lang-Java">em.close();
 </code></pre>
 <p>Transactions are used with operations that modify the database state: <em>create</em>, <em>update</em> and <em>delete</em>.</p>
 <p>To start a transaction we write:</p>
-<pre><code class="language-Java">em.getTransaction().begin();
+<pre><code class="lang-Java">em.getTransaction().begin();
 </code></pre>
 <p>Too finally commit a transaction we write:</p>
-<pre><code class="language-Java">em.getTransaction().commit();
+<pre><code class="lang-Java">em.getTransaction().commit();
 </code></pre>
 <p>And if we want to undo all changes (rollback) since the last commit we write:</p>
-<pre><code class="language-Java">em.getTransaction().rollback();
+<pre><code class="lang-Java">em.getTransaction().rollback();
 </code></pre>
 <p>Most of the time, the database and objects states will match each other, but while working in a multi-user or remote environment, we might want to be sure that the objects reflect the state of the database, or vice-versa. To do that we use the following two methods:</p>
 <p>To force the database to reflect the object model state:</p>
-<pre><code class="language-Java">em.flush();
+<pre><code class="lang-Java">em.flush();
 </code></pre>
 <p>To force the object model to reflect the database state:</p>
-<pre><code class="language-Java">em.refresh();
+<pre><code class="lang-Java">em.refresh();
 </code></pre>
-<h2>CRUD Operations</h2>
+<h2 id="crud-operations">CRUD Operations</h2>
 <p>We can execute the four CRUD operations using JPA.</p>
 <p><strong>Create:</strong></p>
-<pre><code class="language-Java">em.persist(object);
+<pre><code class="lang-Java">em.persist(object);
 </code></pre>
 <p><strong>Read</strong></p>
-<pre><code class="language-Java">Query q = em.createNativeQuery(&quot;SELECT Query&quot;, ClassName.class);
+<pre><code class="lang-Java">Query q = em.createNativeQuery(&quot;SELECT Query&quot;, ClassName.class);
 </code></pre>
 <p>And then either this:</p>
-<pre><code class="language-Java">List&lt;ClassName&gt; list = q.getResultList();
+<pre><code class="lang-Java">List&lt;ClassName&gt; list = q.getResultList();
 </code></pre>
-<p>Or (only when we know we'll get just <strong>one</strong> result):</p>
-<pre><code class="language-Java">ClassName object = (ClassName) q.getSingleResult();
+<p>Or (only when we know we’ll get just <strong>one</strong> result):</p>
+<pre><code class="lang-Java">ClassName object = (ClassName) q.getSingleResult();
 </code></pre>
 <p><strong>Update</strong></p>
-<pre><code class="language-Java">object.setMethod(setValue);
+<pre><code class="lang-Java">object.setMethod(setValue);
 </code></pre>
 <p>It is important to remember that we must make changes that affect an association in both sides:</p>
-<pre><code class="language-Java">employee.setDepartment(department);
+<pre><code class="lang-Java">employee.setDepartment(department);
 department.addEmployee(employee);
 </code></pre>
 <p><strong>Delete</strong></p>
-<pre><code class="language-Java">em.remove(object);
+<pre><code class="lang-Java">em.remove(object);
 </code></pre>
-<h2>JPA Entity Classes</h2>
+<h2 id="jpa-entity-classes">JPA Entity Classes</h2>
 <p>All entity classes must have the following characteristics:</p>
 <ul>
-<li>Implement <em>Serializable</em>.</li>
-<li>A parameter-less constructor.</li>
-<li>Getters and setters for all attributes.</li>
-<li><em>equals</em> and <em>hashcode</em> methods that use just the primary key attribute.</li>
-<li>Bidirectional associations.</li>
-</ul>
-<p>And it's recommended that they have the following characteristics:</p>
+<li>Implement <em>Serializable</em>.</li><li>A parameter-less constructor.</li><li>Getters and setters for all attributes.</li><li><em>equals</em> and <em>hashcode</em> methods that use just the primary key attribute.</li><li>Bidirectional associations.</li></ul>
+<p>And it’s recommended that they have the following characteristics:</p>
 <ul>
-<li>A <em>toString</em> method.</li>
-<li>Add and remove methods for all <em>List</em> attributes.</li>
-</ul>
+<li>A <em>toString</em> method.</li><li>Add and remove methods for all <em>List</em> attributes.</li></ul>
 <p>Attributes should be of one of the following types:</p>
 <ul>
-<li><em>Integer</em> (INTEGER in SQL)</li>
-<li><em>Double</em> (REAL in SQL)</li>
-<li><em>String</em> (TEXT in SQL)</li>
-<li><em>java.sql.Date</em> (DATE in SQL)</li>
-<li><em>byte[]</em> (BLOB in SQL)</li>
-<li>Another entity class or a list of elements from another entity class (representing a relationship with foreign keys in SQL)</li>
-</ul>
+<li><em>Integer</em> (INTEGER in SQL)</li><li><em>Double</em> (REAL in SQL)</li><li><em>String</em> (TEXT in SQL)</li><li><em>java.sql.Date</em> (DATE in SQL)</li><li><em>byte[]</em> (BLOB in SQL)</li><li>Another entity class or a list of elements from another entity class (representing a relationship with foreign keys in SQL)</li></ul>
 <p>The table represented by the entity class must have:</p>
 <ul>
-<li>A PRIMARY KEY with the AUTOINCREMENT constraint (in SQLite).</li>
-</ul>
+<li>A PRIMARY KEY with the AUTOINCREMENT constraint (in SQLite).</li></ul>
 <p>We must annotate every entity class in the following way:</p>
-<pre><code class="language-Java">@Entity
+<pre><code class="lang-Java">@Entity
 @Table(name = &quot;table_name&quot;)
 public class EntityClass implements Serializable {
 
     @Id
     @GeneratedValue(generator=&quot;generator_name&quot;)
     @TableGenerator(name=&quot;generator-name&quot;, table=&quot;sqlite_sequence&quot;,
-        pkColumnName=&quot;name&quot;, valueColumnName=&quot;seq&quot;,
-        pkColumnValue=&quot;tabl_name&quot;)
+           pkColumnName=&quot;name&quot;, valueColumnName=&quot;seq&quot;,
+           pkColumnValue=&quot;tabl_name&quot;)
     private Integer id;
     ...
 }
 </code></pre>
 <ul>
-<li><em>table_name</em> must be the relational table name.</li>
-<li><em>generator_name</em> can be any name that's different to all other generator names.</li>
-</ul>
+<li><em>table_name</em> must be the relational table name.</li><li><em>generator_name</em> can be any name that’s different to all other generator names.</li></ul>
 <p>Note that the TableGenerator structure shown here is specific to SQLite.</p>
 <p>We annotate blobs this way:</p>
-<pre><code class="language-Java">@Basic(fetch=FetchType.LAZY)
+<pre><code class="lang-Java">@Basic(fetch=FetchType.LAZY)
 @Lob
 private byte[] photo;
 </code></pre>
-<p>The LAZY fetch type means that this attribute is only going to be retrieved from the database when it's really accessed; that is, when the appropriate get method is called. The opposite of LAZY is EAGER.</p>
+<p>The LAZY fetch type means that this attribute is only going to be retrieved from the database when it’s really accessed; that is, when the appropriate get method is called. The opposite of LAZY is EAGER.</p>
 <p>All other attributes are automatically mapped to columns with the same name in the corresponding table. If we want to link an attribute with a column of a different name, we must use the Column annotation:</p>
-<pre><code class="language-Java">@Column(name=&quot;surname)
+<pre><code class="lang-Java">@Column(name=&quot;surname)
 private String familyName;
 </code></pre>
-<p>All relationships between entities must also be annotated. We can choose to make these EAGER or LAZY; the former if we know that we're going to need the linked entity right away, and the latter if not. <strong>Be careful of making all associations EAGER.</strong> If you do that you might end getting the whole database with each read operation.</p>
-<h2>One to One Relationships</h2>
-<p>Here's an example on how to implement a one to one relationship using JPA.</p>
-<h3>Tables</h3>
+<p>All relationships between entities must also be annotated. We can choose to make these EAGER or LAZY; the former if we know that we’re going to need the linked entity right away, and the latter if not. <strong>Be careful of making all associations EAGER.</strong> If you do that you might end getting the whole database with each read operation.</p>
+<h2 id="one-to-one-relationships">One to One Relationships</h2>
+<p>Here’s an example on how to implement a one to one relationship using JPA.</p>
+<h3 id="tables">Tables</h3>
 <p><strong>employees</strong></p>
-<p>|id |name   |surname    |salary |address_id
-|---|-------|-----------|-------|----------
-|1  |Bob    |Way        |50000  |6
-|2  |Sarah  |Smith      |60000  |7</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>surname</th>
+<th>salary</th>
+<th>address_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob</td>
+<td>Way</td>
+<td>50000</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sarah</td>
+<td>Smith</td>
+<td>60000</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
 <p><strong>addresses</strong></p>
-<p>|id |street     |city   |country
-|---|-----------|-------|-------
-|6  |Mayor 5    |Madrid |Spain
-|7  |Fernán 17  |Burgos |Spain</p>
-<h3>Classes</h3>
-<pre><code class="language-Java">@Entity
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>street</th>
+<th>city</th>
+<th>country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>Mayor 5</td>
+<td>Madrid</td>
+<td>Spain</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Fernán 17</td>
+<td>Burgos</td>
+<td>Spain</td>
+</tr>
+</tbody>
+</table>
+<h3 id="classes">Classes</h3>
+<pre><code class="lang-Java">@Entity
 @Table(name=&quot;employees&quot;)
 public class Employee implements Serializable {
     @Id
@@ -491,25 +690,70 @@ public class Address implements Serializable {
     ...
 }
 </code></pre>
-<h2>Many to One Relationships</h2>
-<p>Here's an example on how to implement a many to one relationship using JPA.</p>
-<h3>Tables</h3>
+<h2 id="many-to-one-relationships">Many to One Relationships</h2>
+<p>Here’s an example on how to implement a many to one relationship using JPA.</p>
+<h3 id="tables">Tables</h3>
 <p><strong>employees</strong></p>
-<p>|id |name   |surname    |salary
-|---|-------|-----------|------
-|1  |Bob    |Way        |50000
-|2  |Sarah  |Smith      |60000</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>surname</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob</td>
+<td>Way</td>
+<td>50000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sarah</td>
+<td>Smith</td>
+<td>60000</td>
+</tr>
+</tbody>
+</table>
 <p><strong>phones</strong></p>
-<p>|id |number     |type   |owner_id
-|---|-----------|-------|-------
-|1  |917555555  |home   |1
-|2  |669696969  |work   |1
-|3  |666666666  |work   |2</p>
-<h3>Classes</h3>
-<pre><code class="language-Java">@Entity
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>number</th>
+<th>type</th>
+<th>owner_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>917555555</td>
+<td>home</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>669696969</td>
+<td>work</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>666666666</td>
+<td>work</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="classes">Classes</h3>
+<pre><code class="lang-Java">@Entity
 @Table(name=&quot;employees&quot;)
 public class Employee implements Serializable {
-    @Id
+     @Id
     // Other Id annotations as needed
     private Integer id;
     ...
@@ -531,37 +775,85 @@ public class Phone implements Serializable {
     ...
 }
 </code></pre>
-<h2>Many to Many Relationships</h2>
-<p>Here's an example on how to implement a many to many relationship using JPA.</p>
-<h3>Tables</h3>
+<h2 id="many-to-many-relationships">Many to Many Relationships</h2>
+<p>Here’s an example on how to implement a many to many relationship using JPA.</p>
+<h3 id="tables">Tables</h3>
 <p><strong>employees</strong></p>
-<p>|id |firstname  |lastname
-|---|-----------|--------
-|1  |Bob        |Way
-|2  |Sarah      |Smith</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>firstname</th>
+<th>lastname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob</td>
+<td>Way</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sarah</td>
+<td>Smith</td>
+</tr>
+</tbody>
+</table>
 <p><strong>projects</strong></p>
-<p>|id |name
-|---|----
-|1  |GIS
-|2  |SIG</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GIS</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SIG</td>
+</tr>
+</tbody>
+</table>
 <p><strong>proj_emp</strong></p>
-<p>|emp_id |proj_id
-|-------|-------
-|1      |1
-|1      |2
-|2      |1</p>
-<h3>Classes</h3>
-<pre><code class="language-Java">@Entity
+<table>
+<thead>
+<tr>
+<th>emp_id</th>
+<th>proj_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="classes">Classes</h3>
+<pre><code class="lang-Java">@Entity
 @Table(name=&quot;employees&quot;)
 public class Employee implements Serializable {
-    @Id
+      @Id
     // Other Id annotations as needed
     private Integer id;
     ...
     @ManyToMany
     @JoinTable(name=&quot;proj_emp&quot;,
-        joinColumns={@JoinColumn(name=&quot;emp_id&quot;, referencedColumnName=&quot;id&quot;)},
-        inverseJoinColumns={@JoinColumn(name=&quot;proj_id&quot;, referencedColumnName=&quot;id&quot;)})
+           joinColumns={@JoinColumn(name=&quot;emp_id&quot;, referencedColumnName=&quot;id&quot;)},
+           inverseJoinColumns={@JoinColumn(name=&quot;proj_id&quot;, referencedColumnName=&quot;id&quot;)})
     private List&lt;Project&gt; projects;
     ...
 }
@@ -578,30 +870,82 @@ public class Project implements Serializable {
     ...
 }
 </code></pre>
-<h2>Many to Many Relationships with an Association Class</h2>
+<h2 id="many-to-many-relationships-with-an-association-class">Many to Many Relationships with an Association Class</h2>
 <p>When a many to many relationship has an association class, we need to represent this extra information as another class. In this case, the many to many relationship is simulated as two many to one relationships between the association class and the two related classes.</p>
-<h3>Tables</h3>
+<h3 id="tables">Tables</h3>
 <p><strong>employees</strong></p>
-<p>|id |firstname  |lastname
-|---|-----------|--------
-|1  |Bob        |Way
-|2  |Sarah      |Smith</p>
-<p><strong>projects</strong></p>
-<p>|id |name
-|---|----
-|1  |GIS
-|2  |SIG</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>firstname</th>
+<th>lastname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bob</td>
+<td>Way</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sarah</td>
+<td>Smith</td>
+</tr>
+</tbody>
+</table>
+<p><strong>projects</strong>    </p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GIS</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SIG</td>
+</tr>
+</tbody>
+</table>
 <p><strong>proj_emp</strong></p>
-<p>|emp_id |proj_id    |is_lead
-|-------|-----------|-------
-|1      |1          |true
-|1      |2          |false
-|2      |1          |false</p>
-<h3>Classes</h3>
-<pre><code class="language-Java">@Entity
+<table>
+<thead>
+<tr>
+<th>emp_id</th>
+<th>proj_id</th>
+<th>is_lead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>true</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>false</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="classes">Classes</h3>
+<pre><code class="lang-Java">@Entity
 @Table(name=&quot;employees&quot;)
 public class Employee implements Serializable {
-    @Id
+      @Id
     // Other Id annotations as needed
     private Integer id;
     ...
@@ -613,7 +957,7 @@ public class Employee implements Serializable {
 @Entity
 @Table(name=&quot;projects&quot;)
 public class Project implements Serializable {
-    @Id
+      @Id
     // Other Id annotations as needed
     private Integer id;
     ...
@@ -643,53 +987,67 @@ public class ProjectAssociation implements Serializable {
 }
 
 public class ProjectAssociationId implements Serializable {
- 
+
     private Integer emp_id;
     private Integer proj_id;
- 
+
     // equals() and hashcode() using both ids
     public int hashCode() {
-        return (int)(employeeId + projectId);
+           return (int)(employeeId + projectId);
     }
- 
+
     public boolean equals(Object object) {
-        if (object instanceof ProjectAssociationId) {
-            ProjectAssociationId otherId = (ProjectAssociationId) object;
-            return (otherId.employeeId == this.employeeId) &amp;&amp;
+           if (object instanceof ProjectAssociationId) {
+               ProjectAssociationId otherId = (ProjectAssociationId) object;
+               return (otherId.employeeId == this.employeeId) &amp;&amp;
                 (otherId.projectId == this.projectId);
-        }
-        return false;
+           }
+           return false;
     }
 
 }
 </code></pre>
 <p>Note that, in the example, we needed to create a special class <em>ProjectAssociationID</em>, whose sole purpose is to compute the primary key of the association class. This is needed because such primary key is made by combining two foreign keys.</p>
-<p>Here's an example on how to create an association class' object for this many to many relationship:</p>
-<pre><code class="language-Java">public void addEmployee(Employee employee, boolean teamLead) {
-    ProjectAssociation association = new ProjectAssociation();
-    association.setEmployee(employee);
-    association.setProject(this);
-    association.setEmployeeId(employee.getId());
-    association.setProjectId(this.getId());
-    association.setIsTeamLead(teamLead);
+<p>Here’s an example on how to create an association class’ object for this many to many relationship:</p>
+<pre><code class="lang-Java">public void addEmployee(Employee employee, boolean teamLead) {
+       ProjectAssociation association = new ProjectAssociation();
+       association.setEmployee(employee);
+       association.setProject(this);
+       association.setEmployeeId(employee.getId());
+       association.setProjectId(this.getId());
+       association.setIsTeamLead(teamLead);
 
-    this.employees.add(association);
-    // Also add the association object to the employee.
-    employee.getProjects().add(association);
+       this.employees.add(association);
+       // Also add the association object to the employee.
+       employee.getProjects().add(association);
 }
 </code></pre>
 <p>The previous code is designed to be part of the <em>Project</em> class.</p>
-<h2>Id generation with JDBC, JPA and SQLite</h2>
+<h2 id="id-generation-with-jdbc-jpa-and-sqlite">Id generation with JDBC, JPA and SQLite</h2>
 <p>To be able to work with JDBC and JPA at the same time while using SQLite (as happens in our examples), we must force JPA to use the SQLite primary key generation strategy.</p>
-<p>When SQLite needs to assign a primary key to a row, it looks in a special table called <em>sqlite_sequence</em>, which is automatically created in each SQLite database. This table has two columns: <em>name</em> that contains the other tables' names, and <em>seq</em>, which stores the next primary key to be assigned. Here's an example of this table:</p>
-<p><strong>sqlite_sequence</strong></p>
-<p>|name           |seq
-|---------------|----
-|employees      |7
-|departments    |4</p>
+<p>When SQLite needs to assign a primary key to a row, it looks in a special table called <em>sqlite_sequence</em>, which is automatically created in each SQLite database. This table has two columns: <em>name</em> that contains the other tables’ names, and <em>seq</em>, which stores the next primary key to be assigned. Here’s an example of this table:</p>
+<p><strong>sqlite_sequence</strong>    </p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>seq</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>employees</td>
+<td>7</td>
+</tr>
+<tr>
+<td>departments</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 <p>In this example, the next new item in the employees table will have an id of 7, and the next department will have a primary key of 4.</p>
 <p>We need to reflect this in the entity classes, so we annotate the id attribute in the following way:</p>
-<pre><code class="language-Java">@Id
+<pre><code class="lang-Java">@Id
 @GeneratedValue(generator = &quot;employees&quot;)
 @TableGenerator(name = &quot;employees&quot;, table = &quot;sqlite_sequence&quot;,
                 pkColumnName = &quot;name&quot;, valueColumnName = &quot;seq&quot;,
@@ -698,7 +1056,7 @@ private Integer id;
 </code></pre>
 <p>What table to use for the id is stored in the <em>table</em> parameter, which in our case is always <em>sqlite_Sequence</em>. In the same way, <em>pkColumnName</em> and <em>valueColumnName</em> must always be <em>name</em> and <em>seq</em>, respectively, since they point to the two columns of the aforementioned table.</p>
 <p>The <em>generator</em> and <em>name</em> properties must have the same name (<em>employees</em> in the example), and that name should be unique for each entity.</p>
-<p>Finally, <em>pkColumnValue</em> have to contain the name of the entity's table as it appears on the database. In this example, <em>employees</em>. Notice that is the same name that we chose for the previous two properties, for consistency's sake.</p>
+<p>Finally, <em>pkColumnValue</em> have to contain the name of the entity’s table as it appears on the database. In this example, <em>employees</em>. Notice that is the same name that we chose for the previous two properties, for consistency’s sake.</p>
 
 </body>
 </html>
