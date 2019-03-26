@@ -1,6 +1,7 @@
 JDBC Cheatsheet
 ===============
-*Rodrigo García Carmona* (v1.2)
+*Rodrigo García Carmona* (v1.2.1)
+![CC-BY-NC-SA](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Cc-by-nc-sa_icon.svg/200px-Cc-by-nc-sa_icon.svg.png)
 
 This guide has been created with SQLite in mind.
 
@@ -181,5 +182,5 @@ After inserting a new row in a table without specifying the primary key, you can
 String query = "SELECT last_insert_rowid() AS lastId";
 PreparedStatement p = c.prepareStatement(query);
 ResultSet rs = p.executeQuery();
-Integer lastId = rs1.getInt("lastId");
+Integer lastId = rs.getInt("lastId");
 ```

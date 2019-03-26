@@ -1,6 +1,7 @@
 JPA Cheatsheet
 ==============
 *Rodrigo García Carmona* (v1.2.0)
+![CC-BY-NC-SA](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Cc-by-nc-sa_icon.svg/200px-Cc-by-nc-sa_icon.svg.png)
 
 This guide has been written with SQLite and EclipseLink in mind.
 

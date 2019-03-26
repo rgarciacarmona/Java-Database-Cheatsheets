@@ -469,7 +469,7 @@ vertical-align:1px;
 </head>
 <body>
 <h1 id="jdbc-cheatsheet">JDBC Cheatsheet</h1>
-<p><em>Rodrigo García Carmona</em> (v1.2)</p>
+<p><em>Rodrigo García Carmona</em> (v1.2.1)<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Cc-by-nc-sa_icon.svg/200px-Cc-by-nc-sa_icon.svg.png" alt="CC-BY-NC-SA"></p>
 <p>This guide has been created with SQLite in mind.</p>
 <p>First of all, remember that you need to have the <em>sqlite-jdbc</em> jar in your workspace and added as a library to the project.</p>
 <h2 id="create-a-connection">Create a Connection</h2>
@@ -574,7 +574,7 @@ blobStream.read(blobArray);
 <pre><code class="lang-Java">String query = &quot;SELECT last_insert_rowid() AS lastId&quot;;
 PreparedStatement p = c.prepareStatement(query);
 ResultSet rs = p.executeQuery();
-Integer lastId = rs1.getInt(&quot;lastId&quot;);
+Integer lastId = rs.getInt(&quot;lastId&quot;);
 </code></pre>
 
 </body>

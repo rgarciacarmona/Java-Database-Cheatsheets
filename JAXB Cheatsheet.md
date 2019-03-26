@@ -1,6 +1,7 @@
 JAXB Cheatsheet
 ===============
 *Rodrigo García Carmona* (v1.0.2)
+![CC-BY-NC-SA](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Cc-by-nc-sa_icon.svg/200px-Cc-by-nc-sa_icon.svg.png)
 
 Project setup
 -------------

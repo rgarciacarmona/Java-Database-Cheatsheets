@@ -1,6 +1,7 @@
 JPA Inheritance
 ===============
 *Rodrigo García Carmona* (v1.1.3)
+![CC-BY-NC-SA](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Cc-by-nc-sa_icon.svg/200px-Cc-by-nc-sa_icon.svg.png)
 
 Relational databases don't feature object-oriented inheritance, so using super and subclasses with JPA can be tricky. There is no standard way to implement inheritance in a database, and therefore we must choose how we're going to represent this feature in the relational model.
 
