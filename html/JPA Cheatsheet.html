@@ -469,7 +469,7 @@ vertical-align:1px;
 </head>
 <body>
 <h1 id="jpa-cheatsheet">JPA Cheatsheet</h1>
-<p><em>Rodrigo García Carmona</em> (v1.2.0)</p>
+<p><em>Rodrigo García Carmona</em> (v1.2.1)<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Cc-by-nc-sa_icon.svg/200px-Cc-by-nc-sa_icon.svg.png" alt="CC-BY-NC-SA"></p>
 <p>This guide has been written with SQLite and EclipseLink in mind.</p>
 <h2 id="project-setup">Project setup</h2>
 <p>To be able to use JPA we must add the JPA provider (in our case, EclipseLink) to our project. This is done by importing the following two jar files:</p>
@@ -993,16 +993,11 @@ public class ProjectAssociationId implements Serializable {
 
     // equals() and hashcode() using both ids
     public int hashCode() {
-           return (int)(employeeId + projectId);
+           ...
     }
 
     public boolean equals(Object object) {
-           if (object instanceof ProjectAssociationId) {
-               ProjectAssociationId otherId = (ProjectAssociationId) object;
-               return (otherId.employeeId == this.employeeId) &amp;&amp;
-                (otherId.projectId == this.projectId);
-           }
-           return false;
+           ...
     }
 
 }
